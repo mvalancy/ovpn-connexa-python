@@ -1,6 +1,6 @@
 import os
 import pytest
-from src.cloudconnexa import CloudConnexaClient
+from cloudconnexa import CloudConnexaClient
 
 REQUIRED_ENV_VARS = [
     "CLOUDCONNEXA_API_URL",

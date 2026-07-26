@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from src.cloudconnexa import CloudConnexaClient
-from src.cloudconnexa.utils.errors import ResourceNotFoundError, ValidationError, RateLimitError
+from cloudconnexa import CloudConnexaClient
+from cloudconnexa.utils.errors import ResourceNotFoundError, ValidationError, RateLimitError
 from datetime import datetime
 
 def test_network_list():

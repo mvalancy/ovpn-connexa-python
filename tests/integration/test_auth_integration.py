@@ -1,6 +1,6 @@
 import os
 import pytest
-from src.cloudconnexa import CloudConnexaClient
+from cloudconnexa import CloudConnexaClient
 
 def test_real_authentication():
     """

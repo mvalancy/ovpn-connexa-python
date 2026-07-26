@@ -1,8 +1,8 @@
 import os
 import pytest
 from unittest.mock import patch, MagicMock
-from src.cloudconnexa import CloudConnexaClient
-from src.cloudconnexa.utils.errors import AuthenticationError, APIError
+from cloudconnexa import CloudConnexaClient
+from cloudconnexa.utils.errors import AuthenticationError, APIError
 
 # This is a placeholder test that will initially fail
 # You'll implement the actual CloudConnexaClient class following TDD principles
@@ -36,7 +36,7 @@ def test_client_authentication():
         client_secret="test-client-secret"
     )
     
-    with patch('src.cloudconnexa.client.auth.Authenticator.ensure_authenticated', return_value=True):
+    with patch('cloudconnexa.client.auth.Authenticator.ensure_authenticated', return_value=True):
         assert client.authenticate() is True
 
 def test_client_authentication_failure():
@@ -47,7 +47,7 @@ def test_client_authentication_failure():
         client_secret="test-client-secret"
     )
     
-    with patch('src.cloudconnexa.client.auth.Authenticator.ensure_authenticated', side_effect=AuthenticationError("Invalid credentials")):
+    with patch('cloudconnexa.client.auth.Authenticator.ensure_authenticated', side_effect=AuthenticationError("Invalid credentials")):
         assert client.authenticate() is False
 
 def test_client_environment_variables(monkeypatch):

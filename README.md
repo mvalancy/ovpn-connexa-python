@@ -106,25 +106,29 @@ This script will help you set up the development environment and run tests to ve
 
 ## Installation
 
-### From PyPI
+### From Source
+
 ```bash
-pip install cloudconnexa
+git clone https://github.com/mvalancy/ovpn-connexa-python.git
+cd ovpn-connexa-python
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install .
 ```
 
-### From Source
-```bash
-git clone https://github.com/yourusername/ovpn-connexa.git
-cd ovpn-connexa
-./start.sh
-```
+The distribution is named `ovpn-connexa`; the Python import is `cloudconnexa`.
+Installing the package also installs its runtime dependencies. For development,
+see the setup instructions below.
 
 ### As a Git Submodule
+
 ```bash
-git submodule add https://github.com/yourusername/ovpn-connexa.git libs/ovpn-connexa
+git submodule add https://github.com/mvalancy/ovpn-connexa-python.git libs/ovpn-connexa-python
 git submodule update --init --recursive
-cd libs/ovpn-connexa
-./start.sh
+python -m pip install ./libs/ovpn-connexa-python
 ```
+
+Run the install command in your application's virtual environment.
 
 ## Configuration
 

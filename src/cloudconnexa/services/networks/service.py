@@ -84,7 +84,7 @@ class NetworkService:
         response = self.client._session.get(f"{self.client.api_url}/api/v{self.client.api_version}/networks/{network_id}")
         if response.status_code == 404:
             raise ResourceNotFoundError(
-                "Network not found",
+                f"Network with ID '{network_id}' not found",
                 resource_id=network_id,
                 response=response
             )
@@ -97,7 +97,7 @@ class NetworkService:
     def update(self, network_id: str, **kwargs) -> Network:
         response = self.client._session.patch(f"{self.client.api_url}/api/v{self.client.api_version}/networks/{network_id}", json=kwargs)
         if response.status_code == 404:
-            raise ResourceNotFoundError("Network not found", resource_id=network_id, response=response)
+            raise ResourceNotFoundError(f"Network with ID '{network_id}' not found", resource_id=network_id, response=response)
         if response.status_code == 400:
             raise ValidationError("Validation failed", response=response)
         if response.status_code != 200:
@@ -108,7 +108,7 @@ class NetworkService:
         response = self.client._session.delete(f"{self.client.api_url}/api/v{self.client.api_version}/networks/{network_id}")
         if response.status_code == 404:
             raise ResourceNotFoundError(
-                "Network not found",
+                f"Network with ID '{network_id}' not found",
                 resource_id=network_id,
                 response=response
             )

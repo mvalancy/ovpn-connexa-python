@@ -51,7 +51,7 @@ This typically indicates an issue with the Python module structure. Check that:
 
 If you encounter problems during `make setup`:
 
-1. Ensure you have Python 3.6+ installed: `python3 --version`
+1. Ensure you have Python 3.7+ installed: `python3 --version`
 2. On Debian/Ubuntu systems, you might need to install Python dev packages:
    ```bash
    sudo apt-get install python3-dev python3-venv

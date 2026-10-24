@@ -4,14 +4,12 @@ setup(
     name="ovpn-connexa",
     version="0.1.0",
     description="A Python client for the Cloud Connexa API",
-    author="Your Name",
-    author_email="your.email@example.com",
+    url="https://github.com/mvalancy/ovpn-connexa-python",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     python_requires=">=3.7",
     install_requires=[
-        # Add your dependencies from requirements.txt here
-        # or keep them in requirements.txt and have setup.py read from there
+        "requests>=2.25.0",
     ],
     extras_require={
         "dev": [
